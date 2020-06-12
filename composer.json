@@ -1,0 +1,34 @@
+{
+    "name": "xpbl4/yii2-dependent-widget",
+    "description": "Dependent Dropdown widget allow to create simple dropdown list ",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","dependent","select","dropdown"],
+    "homepage": "https://github.com/Xpbl4/yii2-dependent-widget",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Serge Mashkov",
+            "email": "xpbl4@motorwars.ru",
+            "homepage": "https://github.com/Xpbl4",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/Xpbl4/yii2-dependent-widget/issues?state=open",
+        "source": "https://github.com/Xpbl4/yii2-dependent-widget"
+    },
+    "repositories":[
+        {
+            "type": "git",
+            "url": "https://github.com/Xpbl4/yii2-dependent-widget.git"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "xpbl4\\dependent\\": "src"
+        }
+    }
+}
