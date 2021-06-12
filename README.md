@@ -28,8 +28,7 @@ Usage
 Once the extension is installed, simply use it in your code by  :
 
 ```php
-<?= \xpbl4\dependent\Widget::widget(); ?>
+<?= \xpbl4\dependent\Dropdown::widget(); ?>
 <?= \xpbl4\dependent\Select2::widget(); ?>
-<?= \xpbl4\dependent\DropDownList::widget(); ?>
-<?= \xpbl4\dependent\DropDownMenu::widget(); ?>
+<?= \xpbl4\dependent\DropdownMenu::widget(); ?>
 ```

@@ -1,0 +1,25 @@
+@keyframes glow-green {
+	from { border-color: initial; }
+	to { border-color: #00a65a; }
+}
+
+.dependent,
+.form-control.dependent {
+}
+.dependent-loading,
+.form-control.dependent-loading {
+	animation-duration: 0.5s;
+	animation-name: glow-green;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+.dependent-error,
+.form-control.dependent-error {
+	border-color: #f39c12;
+	box-shadow: none;
+}
+.dependent-error:focus,
+.form-control.dependent-error:focus {
+	border-color: #f39c12;
+	box-shadow: none;
+}
