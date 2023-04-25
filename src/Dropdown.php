@@ -66,10 +66,10 @@ class Dropdown extends \yii\widgets\InputWidget
 	 * Example:
 	 * ```php
 	 * [
-	 *     'select2:open' => 'function (e) { log("select2:open", e); }',
-	 *     'select2:close' => new JsExpression('function (e) { log("select2:close", e); }'),
-	 *     'select2:select' => [
-	 *         'function (e) { log("select2:select", e); }',
+	 *     'dependent:open' => 'function (e) { log("dependent:open", e); }',
+	 *     'dependent:close' => new JsExpression('function (e) { log("dependent:close", e); }'),
+	 *     'dependent:select' => [
+	 *         'function (e) { log("dependent:select", e); }',
 	 *         'function (e) { console.log(e); }'
 	 *     ]
 	 * ]

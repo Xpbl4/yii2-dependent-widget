@@ -118,13 +118,12 @@
 
         initialize: false,
         trigger: 'change',
-        //page: 1,
         pagination: {
             limit: 20
         },
 
-        plugin: false,
-        pluginOptions: false,
+        plugin: false, // select2, selectize, chosen, typeahead
+        pluginOptions: {},
 
         idParam: 'id',
         nameParam: 'name',
@@ -195,7 +194,7 @@
         var options = this.options;
         var $element = this.$element;
 
-        var select2Options = $.extend(true, {}, options.select2Options, {
+        var pluginOptions = $.extend(true, {}, options.pluginOptions, {
             ajax: {
                 url: url,
                 dataType: 'json',
@@ -205,7 +204,7 @@
                 cache: true
             }
         });
-        $element.select2(select2Options);
+        $element.select2(pluginOptions);
     };
 
     DependentDropdown.prototype.request = function (url, data) {
@@ -348,10 +347,8 @@
         var options = this.options;
         var url = options.url;
 
-        this.request(url, $.proxy(dataDepends, this));
-
-        if (options.plugin !== false)
-            this.requestPlugin(url, $.proxy(dataDepends, this));
+        if (options.plugin) this.requestPlugin(url, $.proxy(dataDepends, this));
+		else this.request(url, $.proxy(dataDepends, this));
     };
 
     // DEPENDENT PLUGIN DEFINITION
