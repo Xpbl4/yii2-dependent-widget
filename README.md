@@ -25,10 +25,71 @@ to the require section of your `composer.json` file.
 Usage
 -----
 
-Once the extension is installed, simply use it in your code by  :
+Once the extension is installed, simply use it in your code by:
 
 ```php
-<?= \xpbl4\dependent\Dropdown::widget(); ?>
-<?= \xpbl4\dependent\Select2::widget(); ?>
-<?= \xpbl4\dependent\DropdownMenu::widget(); ?>
+<?= Html::dropDownList('depend_field', '', ['first', 'second', 'third']); ?>
+<?= \xpbl4\dependent\Dropdown::widget([
+    'id' => 'exampleInput',
+    'name' => 'test',
+    'items' => ['one', 'two', 'three'],
+    'options' => ['class' => 'form-control', 'prompt' => 'Select item...'],
+    'pluginOptions' => [
+        'url' => \yii\helpers\Url::toRoute(), /* return [items...] */
+        'initialize' => true,
+        'depends' => [
+            'depend_id' => 'depend_field',
+        ],
+        'ajaxOptions' => [
+            'delay' => 500
+        ],
+        'pagination' => [
+            'limit' => 10
+        ],
+    ],
+    'pluginEvents' => [
+        'dependent:init' => new \yii\web\JsExpression('consoleEvent'),
+        'dependent:change' => new \yii\web\JsExpression('consoleEvent'),
+        'dependent:focus' => new \yii\web\JsExpression('consoleEvent'),
+        'dependent:beforeSend' => new \yii\web\JsExpression('consoleEvent'),
+        'dependent:success' => new \yii\web\JsExpression('consoleEvent'),
+        'dependent:error' => new \yii\web\JsExpression('consoleEvent'),
+        'dependent:afterChange' => new \yii\web\JsExpression('consoleEvent'),
+
+    ]
+]); ?>
+
+<?= \xpbl4\dependent\Select2::widget([
+    'id' => 'exampleInput',
+    'name' => 'test',
+    'items' => ['one', 'two', 'three'],
+    'options' => ['class' => 'form-control', 'prompt' => 'Select item...'],
+    'pluginOptions' => [
+        'url' => \yii\helpers\Url::toRoute(), /* return [items...] */
+        'initialize' => true,
+        'depends' => [
+            'depend_id' => 'depend_field',
+        ],
+        'ajaxOptions' => [
+            'delay' => 500
+        ],
+        'pagination' => [
+            'limit' => 10
+        ],
+    ],
+    'pluginEvents' => [
+        'dependent:init' => new \yii\web\JsExpression('consoleEvent'),
+        'dependent:change' => new \yii\web\JsExpression('consoleEvent'),
+        ...
+
+        'select2:open' => 'function (e) { log("select2:open", e); }',
+        'select2:close' => new JsExpression('function (e) { log("select2:close", e); }')
+        ...
+    ],
+    'select2Options' => [
+        'allowClear' => true,
+        'closeOnSelect' => false,
+        ... /* Options for Select2 plugin */
+    ]
+]); ?>
 ```
