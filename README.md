@@ -1,9 +1,12 @@
-Yii2 Dependent Dropdown widget
-==============================
+# Yii2 Dependent Dropdown widget
+
+[![Latest Version](https://img.shields.io/github/tag/Xpbl4/yii2-dependent-widget.svg?style=flat-square&label=release)](https://github.com/Xpbl4/yii2-dependent-widget/releases)
+[![Software License](https://img.shields.io/badge/license-BSD-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Total Downloads](https://img.shields.io/packagist/dt/Xpbl4/yii2-dependent-widget.svg?style=flat-square)](https://packagist.org/packages/Xpbl4/yii2-dependent-widget)
+
 Dependent Dropdown widget allows to create dependent dropdown lists 
 
-Installation
-------------
+## Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
@@ -21,9 +24,7 @@ or add
 
 to the require section of your `composer.json` file.
 
-
-Usage
------
+## Usage
 
 Once the extension is installed, simply use it in your code by:
 
